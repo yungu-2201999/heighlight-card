@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+}
+
+.container {
+  display: grid;
+  margin: auto;
+  width: 90%;
+  margin-top: 1em;
+  color: #f0f0f0;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.card {
+  aspect-ratio:4/3;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, .3);
+  position:relative;
+  overflow: hidden;
+}
+.card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(closest-side circle, #fff 0%, #0000 100%);
+  transform: translate(var(--x,-100000px),var(--y,-100000px));
+}
+.inner{
+  position: absolute;
+  inset: 10px;
+  background-color: #222;
+  border-radius: inherit;
+}
